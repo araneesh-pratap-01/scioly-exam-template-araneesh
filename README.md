@@ -25,13 +25,13 @@ I've included a minimalistic build script `./build.sh` as an example, using Late
 
 ## Data Format
 
-`./data/exam-context.txt` is a simple data file that handles the primary exam content for the Test Packet, Answer Sheet, and Key. It's a bit strange-looking due to the challenges of TeX, but the functionally should be straightforward.
+`./data/exam-context.txt` is a simple data file that handles the primary exam content for the Test Packet, Answer Sheet, and Key. It's a bit strange-looking due to the challenges of TeX, but the functionality should be straightforward.
 
 Each line corresponds to one entry, which is either a section header, infoline, or a question. Columns are delimited by `!!` and spaces on either end of a field are trimmed when the data is ingested.
 
 Columns are as follows:
 1. **Type:** Currently one of `S` for a Section, `i` for an Infoline, or `Q` for a Question.
-2. **Section:** Links the element to one of the section letters defined in `./data/scioly-exam-template-araneesh-data.sty`, allowing for autosummation of point values. A value in this field is not strictly necessary for Infolines but including it does make it easier to read.
+2. **Section:** Links the element to one of the section letters defined in `./data/scioly-exam-template-araneesh-data.sty`, allowing for auto-summation of point values. A value in this field is not strictly necessary for Infolines but including it does make it easier to read.
 3. **Points:** Number of points for a Question. Automatically appended in the Test Packet, Answer Sheet, and Key. Unused for Sections and Infolines - my convention is to leave it blank on the former and input a 0 on the latter, to aid in readability.
 4. **Data, Test Packet:** For an Infoline or Question, this is the text to display on the Test Packet. For a Section, this is invoked before the section header - I use it to set page and column breaks, it may have other more versatile uses as well (try it out at your own risk).
 5. **Data, Key:**  For a Section, invoked before the section header for e.g. page/column breaks. For a Question, this can be used to set answer formatting and linebreaks on the Key to match the Answer Sheet. Unused for an Infoline.
