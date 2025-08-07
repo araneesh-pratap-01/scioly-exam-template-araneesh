@@ -44,4 +44,4 @@ The included version of `./data/exam-context.txt` shows some examples of how to 
 
 This project is relatively brittle in exchange for efficiency in its somewhat narrow goals. I can get away with this thanks to my extensive event supervising experience, as I have confidence that it meets my event supervising needs consistently. It should work well for most event supervisors (at least, those who are willing/able to use LaTeX), but your mileage may vary.
 
-If you want to bring up feedback or ask questions, I've opened a [thread on the Scioly.org Forums](example.com). Please post any such comments there, as I want to ensure that everyone has easy access to discussions.
+If you want to bring up feedback or ask questions, I've opened a [thread on the Scioly.org Forums](https://scioly.org/forums/viewtopic.php?t=29230). Please post any such comments there, as I want to ensure that everyone has easy access to discussions.
