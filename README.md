@@ -1,4 +1,4 @@
-# scioly-test-base
+# scioly-exam-template-araneesh
 
 LaTeX files and custom document class for Science Olympiad exam writing, originally developed by me (Araneesh Pratap) for my own use, released since it might be useful to other event supervisors.
 
