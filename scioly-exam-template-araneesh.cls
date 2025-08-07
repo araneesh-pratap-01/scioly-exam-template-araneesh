@@ -7,7 +7,7 @@
 % ==============================================================================
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{exam-scioly-araneesh}[2025/08/07 Araneesh Pratap's Science Olympiad exam formatting class v1.0.0]
+\ProvidesClass{scioly-exam-template-araneesh}[2025/08/07 Araneesh Pratap's Science Olympiad exam formatting class v1.0.0]
 
 \LoadClass{exam} % minimal direct usage (it's opinionated in a direction that doesn't match my needs) but not worth the trouble of rebasing onto article and directly handling page layout myself
 
@@ -27,7 +27,7 @@
 \RequirePackage{readarray} % data ingestion for questions
 \RequirePackage{forloop}
 
-\RequirePackage{data/exam-scioly-araneesh-data} % load common data (tournament info)
+\RequirePackage{data/scioly-exam-template-araneesh-data} % load common data (tournament info)
 
 % == Image Sheet tikz formatting ==
 \newcommand{\formatimgnum}[1]{%

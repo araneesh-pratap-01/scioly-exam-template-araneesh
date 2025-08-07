@@ -7,7 +7,7 @@ LaTeX files and custom document class for Science Olympiad exam writing, origina
 1. Copy the files for your own use (use Git if you want, otherwise there is a zip file in the attached artifacts for the [latest release](https://github.com/araneesh-pratap-01/scioly-exam-template-araneesh/releases)).
 2. Have a TeX distribution set up. It will probably also work with Overleaf if you want (you may need to configure the compilation engine, at least), though I haven't tried it myself as I do my work locally.
 3. Swap out the logo in `./images/` if you want to use a tournament-specific logo.
-4. Open `./data/exam-scioly-araneesh-data.sty`, fill out the tournament- and event-specific info, and increase the number of sections if needed. Probably also rename the various `.tex` files in the main directory.
+4. Open `./data/scioly-exam-template-araneesh-data.sty`, fill out the tournament- and event-specific info, and increase the number of sections if needed. Probably also rename the various `.tex` files in the main directory.
 5. Open `./data/exam-content.txt` and enter the exam content - questions, answers, question-level formatting instructions, and such. The data format is described in a later section of this readme.
 6. Place images for the image sheet in `./images/`. For Git users, the `.gitignore` in that directory is set to ignore image files aside from the logo, naturally you can turn that off if you want though you'd want to be careful with handling image binaries in that case, especially if you're using Github or some other such third-party remote host.
 7. Format images into the image sheet file `ExamTemplate_ImageSheet.tex` directly.
@@ -31,7 +31,7 @@ Each line corresponds to one entry, which is either a section header, infoline, 
 
 Columns are as follows:
 1. **Type:** Currently one of `S` for a Section, `i` for an Infoline, or `Q` for a Question.
-2. **Section:** Links the element to one of the section letters defined in `./data/exam-scioly-araneesh-data.sty`, allowing for autosummation of point values. A value in this field is not strictly necessary for Infolines but including it does make it easier to read.
+2. **Section:** Links the element to one of the section letters defined in `./data/scioly-exam-template-araneesh-data.sty`, allowing for autosummation of point values. A value in this field is not strictly necessary for Infolines but including it does make it easier to read.
 3. **Points:** Number of points for a Question. Automatically appended in the Test Packet, Answer Sheet, and Key. Unused for Sections and Infolines - my convention is to leave it blank on the former and input a 0 on the latter, to aid in readability.
 4. **Data, Test Packet:** For an Infoline or Question, this is the text to display on the Test Packet. For a Section, this is invoked before the section header - I use it to set page and column breaks, it may have other more versatile uses as well (try it out at your own risk).
 5. **Data, Key:**  For a Section, invoked before the section header for e.g. page/column breaks. For a Question, this can be used to set answer formatting and linebreaks on the Key to match the Answer Sheet. Unused for an Infoline.
