@@ -1,0 +1,10 @@
+# Gitignore for ./images
+# These rules exclude everything in the images directory except the logo, as that avoids complications with large amounts of binary data in the repo history
+# Also included are three example images to demonstrate the Image Sheet functionality
+
+*
+!.gitignore
+!logo.png
+!Image1example.png
+!Image2example.png
+!Image3example.png

@@ -1,0 +1,5 @@
+# Gitignore for ./output
+# These rules exclude everything in the output directory, since the generated pdfs (which are only moved here for convenience anyway) shouldn't be in the repo.
+
+*
+!.gitignore

@@ -1,0 +1,29 @@
+S !! A !!    !! \empty !! \empty !! \empty
+I !! A !!  0 !! This example section demonstrates much of the fundamental feature set. !!  !! 
+Q !! A !!  1 !! Question with a regular length blank !! \ans{Schwarzchild radius (1)} !! \blank
+Q !! A !! 12 !! Question with a short blank !! \ans{120 (12)} !! \blankShort
+Q !! A !!  4 !! Question with a multi-line blank !! \ans{Long answer (1) which spans}\breakans\ans{multiple lines (2), doesn't}\breakans\ans{support auto-breaking (1)} !! \blankFull\breakans\blankFull\breakans\blank
+Q !! A !!  5 !! Question with units or such !! \ans{7.8 to 7.9}~meters \ans{(5)} !! \blankShort~meters
+I !! A !!  0 !! Infolines can also be placed within a section. !!  !! 
+Q !! A !!  1 !! Filler question !! \ans{Filler answer} !! \blank
+Q !! A !!  2 !! Filler question !! \ans{Filler answer} !! \blank
+Q !! A !!  2 !! Filler question !! \ans{Filler answer} !! \blank
+Q !! A !!  1 !! Filler question !! \ans{Filler answer} !! \blank
+S !! B !!    !! \breakcolumn !! \empty !! \empty
+I !! B !!  0 !! Example section with more "natural" questions. !!  !! 
+Q !! B !!  3 !! What is the capital city of the US state of Georgia? !! \ans{Atlanta (3)} !! \blank
+Q !! B !!  1 !! How many times does the letter "e" appear in this question? !! \ans{8 (1)} !! \blankShort
+Q !! B !!  2 !! What is the land area of Manhattan? !! \ans{58 to 60}~km\textsuperscript{2} \ans{(2)} !! \blankShort~km\textsuperscript{2}
+Q !! B !!  2 !! I ran out of ideas !! \ans{According to all known laws of}\breakans\ans{aviation (1), there is no way a}\breakans\ans{bee should be able to fly (1)} !! \blankFull\breakans\blankFull\breakans\blank
+S !! C !!    !! \breakcolumn !! \breakcolumn !! \breakcolumn
+I !! C !!  0 !! Refer to Image 3 for these questions. Lorem ipsum dolor sit amet, consectetur !!  !! 
+Q !! C !!  1 !! Filler question !! \ans{Filler answer} !! \blank
+Q !! C !!  1 !! Filler question !! \ans{Filler answer} !! \blank
+Q !! C !!  1 !! Filler question !! \ans{Filler answer} !! \blank
+Q !! C !!  1 !! Filler question !! \ans{Filler answer} !! \blank
+Q !! C !!  1 !! Filler question !! \ans{Filler answer} !! \blank
+Q !! C !!  1 !! Filler question !! \ans{Filler answer} !! \blank
+Q !! C !!  1 !! Filler question !! \ans{Filler answer} !! \blank
+Q !! C !!  1 !! Filler question !! \ans{Filler answer} !! \blank
+Q !! C !!  1 !! Filler question !! \ans{Filler answer} !! \blank
+Q !! C !!  1 !! Filler question !! \ans{Filler answer} !! \blank

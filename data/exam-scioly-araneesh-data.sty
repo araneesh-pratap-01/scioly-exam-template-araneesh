@@ -1,0 +1,33 @@
+% ==============================================================================
+% Science Olympiad exam formatting data package
+% Written by: Araneesh Pratap
+% Intended to be used in-place with the provided files in the repo
+% Refer: https://github.com/araneesh-pratap-01/scioly-exam-template-araneesh
+% v1.0.0
+% ==============================================================================
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{exam-scioly-araneesh-data}[2025/08/07 Common data package for Araneesh Pratap's Science Olympiad exam formatting template v1.0.0]
+
+% == Tournament Info ==
+\newcommand{\printtournament}{Placeholder Tournament}
+\newcommand{\printdate}{July 32nd, 2025}
+\newcommand{\printevent}{Anatomy and Physiology B} % Event name
+\newcommand{\printauthor}{Written by: Your Name(s)}
+
+% == Define all section point counters here ==
+% latex apparently can't do this dynamically, there's probably a hacky workaround but I'm not gonna waste time on something this minor
+% add more if you need more, having extra doesn't affect anything (although some TeX engines have rather low counter limits, it's unlikely anyone using this will run into even those)
+\newcounter{secA}\regtotcounter{secA}
+\newcounter{secB}\regtotcounter{secB}
+\newcounter{secC}\regtotcounter{secC}
+\newcounter{secD}\regtotcounter{secD}
+\newcounter{secE}\regtotcounter{secE}
+\newcounter{secF}\regtotcounter{secF}
+\newcounter{secG}\regtotcounter{secG}
+\newcounter{secH}\regtotcounter{secH}
+\newcounter{secI}\regtotcounter{secI}
+
+\newcommand{\sumpoints}{%
+    \the\numexpr \totvalue{secA} + \totvalue{secB} + \totvalue{secC} + \totvalue{secD} + \totvalue{secE} + \totvalue{secF} + \totvalue{secG} + \totvalue{secH} + \totvalue{secI} \relax%
+}

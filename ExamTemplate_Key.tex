@@ -1,0 +1,42 @@
+\documentclass{exam-scioly-araneesh}
+
+\newcommand{\printdoctype}{\ans{Key}}
+
+\begin{document}
+
+% == Key Header ==
+\fullwidth{
+\textbf{
+    \\ {\printtournament} - {\printdate}
+    \hfill
+    {\printevent} - {\printdoctype}
+    \vspace*{0.5em}
+}
+\begin{large}
+\\ Team Name: \rule{3.5in}{0.5pt}
+Team \#: \rule{0.4in}{0.5pt}
+\fbox{
+Score: \ans{\sumpoints} / \sumpoints
+}
+\vspace*{0em}
+\\ Competitor Name(s): \rule{5in}{0.5pt}
+\end{large}
+}
+
+% == Exam Content == 
+\begin{multicols}{2}
+\begin{enumerate}
+\begin{large}
+
+% Iterate over data and format entries as appropriate for this doctype
+\newcounter{datarow}\forloop{datarow}{1}{\value{datarow} < \numexpr\sciolydataarrayROWS + 1\relax}{\formatDataEntryKey{\thedatarow}}
+
+\vfill\null
+\includegraphics[width=3in,keepaspectratio]{images/Image1example.png}
+\label{LastPageRef}
+
+\end{large}
+\end{enumerate}
+\end{multicols}
+
+\end{document}

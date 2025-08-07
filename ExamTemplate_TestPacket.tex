@@ -1,0 +1,65 @@
+\documentclass{exam-scioly-araneesh}
+
+\newcommand{\printdoctype}{Test Packet}
+
+\begin{document}
+
+% == Test Packet Title ==
+\begin{center}
+\vspace*{1em}
+{\Huge \textbf{
+        %Science Olympiad\\
+        \printtournament\\
+        \printdate\\
+        \vspace{4mm}
+    }
+}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=4in,height=3in,keepaspectratio]{images/logo.png}
+\end{figure}
+{\Huge \textbf{
+        \printevent\\
+        \printdoctype\\
+        \vspace{4mm}
+    }
+}
+{\Large \textbf{\printauthor} \\ \vspace{4mm}}
+\end{center}
+
+% == Instructions ==
+% Adjust as needed, of course
+\begin{large}
+\begin{center} \textbf{\Large Instructions} \end{center}
+\begin{enumerate}
+    \itemsep-0.25em
+    \item You will have 50 minutes to take this test.
+    \item Answer all questions on your Answer Sheet. The space provided for each question is sufficient to fit a response earning full points.
+    \item All questions have their value indicated in parentheses, both in this Test Packet and on the Answer Sheet. This test has a total of \sumpoints~points.
+%    \item Do not write on or take apart the pages of the Test Packet or Image Sheet.
+    \item You are free to write on and take apart the pages of the Test Packet or Image Sheet as you wish.
+    \item For numerical questions, answers within a reasonable range will earn full credit - accounting for significant figures is not required.
+% Event-specific instructions (leaving my standard Geologic Mapping ones in here as examples):
+%    \item Give answers for strike and dip using the right-hand rule, i.e. choose the strike value such that the dip direction is 90\degree clockwise from it (rather than the one where the dip direction is 90\degree counterclockwise from it).
+%    \item For maps, assume that images are oriented with due north toward the top of the image number, unless informed otherwise.
+    \item Ties will be broken by comparing points earned for each question in order.
+\end{enumerate}
+\end{large}
+\pagebreak
+
+% == Exam Content ==
+\begin{multicols}{2}
+\begin{enumerate}
+\begin{large}
+
+% Iterate over data and format entries as appropriate for this doctype
+\newcounter{datarow}\forloop{datarow}{1}{\value{datarow} < \numexpr\sciolydataarrayROWS + 1\relax}{\formatDataEntryTestpacket{\thedatarow}}
+
+\vfill\null
+\label{LastPageRef}
+
+\end{large}
+\end{enumerate}
+\end{multicols}
+
+\end{document}
