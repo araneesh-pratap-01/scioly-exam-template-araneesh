@@ -3,11 +3,11 @@
 % Written by: Araneesh Pratap
 % Intended to be used in-place with the provided files in the repo
 % Refer: https://github.com/araneesh-pratap-01/scioly-exam-template-araneesh
-% v1.0.3
+% v1.0.2
 % ==============================================================================
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{scioly-exam-template-araneesh}[2025/10/07 Araneesh Pratap's Science Olympiad exam formatting class v1.0.3]
+\ProvidesClass{scioly-exam-template-araneesh}[2025/08/07 Araneesh Pratap's Science Olympiad exam formatting class v1.0.0]
 
 \LoadClass{exam} % minimal direct usage (it's opinionated in a direction that doesn't match my needs) but not worth the trouble of rebasing onto article and directly handling page layout myself
 
