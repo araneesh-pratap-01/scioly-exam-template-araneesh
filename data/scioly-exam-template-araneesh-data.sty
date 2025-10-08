@@ -3,7 +3,7 @@
 % Written by: Araneesh Pratap
 % Intended to be used in-place with the provided files in the repo
 % Refer: https://github.com/araneesh-pratap-01/scioly-exam-template-araneesh
-% v1.0.0
+% v1.0.2
 % ==============================================================================
 
 \NeedsTeXFormat{LaTeX2e}
