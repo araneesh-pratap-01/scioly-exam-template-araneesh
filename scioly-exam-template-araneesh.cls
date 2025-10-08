@@ -17,7 +17,6 @@
 \RequirePackage[letterpaper,lmargin=0.7in,rmargin=0.7in,tmargin=0.5in,bmargin=0.7in,footskip=0.15in]{geometry} % sufficient margins for pretty much any printer or copier
 \RequirePackage{multicol} % setting up two columns
 \RequirePackage{totcount} % forward-looking counter for section handling
-\RequirePackage{xcolor} % red color for key
 \RequirePackage{gensymb} % if I don't keep this now I'll forget about it when I actually need it
 
 \RequirePackage{graphicx} % simple images
