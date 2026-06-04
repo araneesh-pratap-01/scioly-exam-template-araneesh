@@ -13,6 +13,7 @@
 
 \RequirePackage[T1]{fontenc} % mlmodern only comes in T1 apparently
 \RequirePackage{mlmodern} % lmodern is unreadable in digital
+\RequirePackage[a-1b]{pdfx} % PDF/A to ensure compatibility
 
 \RequirePackage[letterpaper,lmargin=0.7in,rmargin=0.7in,tmargin=0.5in,bmargin=0.7in,footskip=0.15in]{geometry} % sufficient margins for pretty much any printer or copier
 \RequirePackage{multicol} % setting up two columns
