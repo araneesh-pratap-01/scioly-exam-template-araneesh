@@ -19,6 +19,7 @@
 \RequirePackage{multicol} % setting up two columns
 \RequirePackage{totcount} % forward-looking counter for section handling
 \RequirePackage{gensymb} % if I don't keep this now I'll forget about it when I actually need it
+\RequirePackage{zref-totpages}
 
 \RequirePackage{graphicx} % simple images
 \RequirePackage{tikz} % image sheet (more constrained, overlays)
@@ -73,14 +74,14 @@
 \firstpagefooter{
     {\scriptsize {\printtournament} - {\printdate}}
 }{
-    {\scriptsize p{\thepage} of \pageref{LastPageRef}}
+    {\scriptsize p{\thepage} of \ztotpages}
 }{
     {\scriptsize {\printevent} - {\printdoctype}}
 }
 \runningfooter{
     {\scriptsize {\printtournament} - {\printdate}}
 }{
-    {\scriptsize p{\thepage} of \pageref{LastPageRef}}
+    {\scriptsize p{\thepage} of \ztotpages}
 }{
     {\scriptsize {\printevent} - {\printdoctype}}
 }
