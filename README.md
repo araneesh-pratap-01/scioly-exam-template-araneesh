@@ -21,16 +21,16 @@ Compile the `.tex` files in the main directory, the engine should automatically 
 
 I use LuaLaTeX as the engine, namely `LuaHBTeX, Version 1.14.0 (TeX Live 2022/dev/Debian)` but pretty much any reasonably recent version should work as TeX tooling tends to be very stable. I haven't tried other engines and I could not tell you anything about how interoperable they are.
 
-I've included a minimalistic build script `./build.sh` as an example, using Latexmk as the build tool (you can use `latexmk -C` to clean the main directory if you want, I personally would rather keep the faster compilation times in exchange for a bit of clutter).
+I've included a minimalistic build script `./build.sh` as an example, using Latexmk as the build tool. Depending on your compile time (e.g. if you have a lot of large images) you may want to modify this slightly as described in its documentation.
 
 ## Data Format
 
-`./data/exam-context.txt` is a simple data file that handles the primary exam content for the Test Packet, Answer Sheet, and Key. It's a bit strange-looking due to the challenges of TeX, but the functionality should be straightforward.
+`./data/exam-content.txt` is a simple data file that handles the primary exam content for the Test Packet, Answer Sheet, and Key. It's a bit strange-looking due to the challenges of TeX, but the functionality should be straightforward.
 
 Each line corresponds to one entry, which is either a section header, infoline, or a question. Columns are delimited by `!!` and spaces on either end of a field are trimmed when the data is ingested.
 
 Columns are as follows:
-1. **Type:** Currently one of `S` for a Section, `i` for an Infoline, or `Q` for a Question.
+1. **Type:** Currently one of `S` for a Section, `I` for an Infoline, or `Q` for a Question.
 2. **Section:** Links the element to one of the section letters defined in `./data/scioly-exam-template-araneesh-data.sty`, allowing for auto-summation of point values. A value in this field is not strictly necessary for Infolines but including it does make it easier to read.
 3. **Points:** Number of points for a Question. Automatically appended in the Test Packet, Answer Sheet, and Key. Unused for Sections and Infolines - my convention is to leave it blank on the former and input a 0 on the latter, to aid in readability.
 4. **Data, Test Packet:** For an Infoline or Question, this is the text to display on the Test Packet. For a Section, this is invoked before the section header - I use it to set page and column breaks, it may have other more versatile uses as well (try it out at your own risk).
@@ -38,7 +38,7 @@ Columns are as follows:
 6. **Data, Answer Sheet:** For a Section, invoked before the section header for e.g. page/column breaks. For a Question, this can be used to set blank lines and any accompanying text (e.g. units) on the Answer Sheet. Unused for an Infoline.
 Note - columns 4, 5, and 6 can include somewhat arbitrary LaTeX commands, e.g. you can do things like `km\textsuperscript{2}`. I haven't rigorously tested the limits of this, TeX can get a little weird with macro handling sometimes and I'm not an expert with it.
 
-The included version of `./data/exam-context.txt` shows some examples of how to use the formatting options provided, using some predefined commands from the class file that satisfy my own use cases.
+The included version of `./data/exam-content.txt` shows some examples of how to use the formatting options provided, using some predefined commands from the class file that satisfy my own use cases.
 
 ## Notes
 

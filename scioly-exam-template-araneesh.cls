@@ -3,21 +3,23 @@
 % Written by: Araneesh Pratap
 % Intended to be used in-place with the provided files in the repo
 % Refer: https://github.com/araneesh-pratap-01/scioly-exam-template-araneesh
-% v1.0.3
+% v1.1.0
 % ==============================================================================
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{scioly-exam-template-araneesh}[2025/10/07 Araneesh Pratap's Science Olympiad exam formatting class v1.0.3]
+\ProvidesClass{scioly-exam-template-araneesh}[2026/06/03 Araneesh Pratap's Science Olympiad exam formatting class v1.1.0]
 
 \LoadClass{exam} % minimal direct usage (it's opinionated in a direction that doesn't match my needs) but not worth the trouble of rebasing onto article and directly handling page layout myself
 
 \RequirePackage[T1]{fontenc} % mlmodern only comes in T1 apparently
 \RequirePackage{mlmodern} % lmodern is unreadable in digital
+\RequirePackage[a-1b]{pdfx} % PDF/A to ensure compatibility
 
 \RequirePackage[letterpaper,lmargin=0.7in,rmargin=0.7in,tmargin=0.5in,bmargin=0.7in,footskip=0.15in]{geometry} % sufficient margins for pretty much any printer or copier
 \RequirePackage{multicol} % setting up two columns
 \RequirePackage{totcount} % forward-looking counter for section handling
 \RequirePackage{gensymb} % if I don't keep this now I'll forget about it when I actually need it
+\RequirePackage{zref-totpages}
 
 \RequirePackage{graphicx} % simple images
 \RequirePackage{tikz} % image sheet (more constrained, overlays)
@@ -72,14 +74,14 @@
 \firstpagefooter{
     {\scriptsize {\printtournament} - {\printdate}}
 }{
-    {\scriptsize p{\thepage} of \pageref{LastPageRef}}
+    {\scriptsize p{\thepage} of \ztotpages}
 }{
     {\scriptsize {\printevent} - {\printdoctype}}
 }
 \runningfooter{
     {\scriptsize {\printtournament} - {\printdate}}
 }{
-    {\scriptsize p{\thepage} of \pageref{LastPageRef}}
+    {\scriptsize p{\thepage} of \ztotpages}
 }{
     {\scriptsize {\printevent} - {\printdoctype}}
 }
