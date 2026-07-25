@@ -1,5 +1,6 @@
-## Generic LaTeX gitignore provided by Github with just the following addition:
+## Generic LaTeX gitignore provided by Github with just the following additions:
 *.pdf
+pdfa.xmpi
 
 ## Core latex/pdflatex auxiliary files:
 *.aux

@@ -7,7 +7,7 @@ LaTeX files and custom document class for Science Olympiad exam writing, origina
 1. Copy the files for your own use (use Git if you want, otherwise there is a zip file in the attached artifacts for the [latest release](https://github.com/araneesh-pratap-01/scioly-exam-template-araneesh/releases)).
 2. Have a TeX distribution set up. It will probably also work with Overleaf if you want (you may need to configure the compilation engine, at least), though I haven't tried it myself as I do my work locally.
 3. Swap out the logo in `./images/` if you want to use a tournament-specific logo.
-4. Open `./data/scioly-exam-template-araneesh-data.sty`, fill out the tournament- and event-specific info, and increase the number of sections if needed. Probably also rename the various `.tex` files in the main directory.
+4. Open `./data/scioly-exam-template-araneesh-data.sty`, fill out the tournament- and event-specific info, and add more sections if needed. Probably also rename the various `.tex` files in the main directory.
 5. Open `./data/exam-content.txt` and enter the exam content - questions, answers, question-level formatting instructions, and such. The data format is described in a later section of this readme.
 6. Place images for the image sheet in `./images/`. For Git users, the `.gitignore` in that directory is set to ignore image files aside from the logo, naturally you can turn that off if you want though you'd want to be careful with handling image binaries in that case, especially if you're using Github or some other such third-party remote host.
 7. Format images into the image sheet file `ExamTemplate_ImageSheet.tex` directly.
@@ -21,7 +21,7 @@ Compile the `.tex` files in the main directory, the engine should automatically 
 
 I use LuaLaTeX as the engine, namely `LuaHBTeX, Version 1.14.0 (TeX Live 2022/dev/Debian)` but pretty much any reasonably recent version should work as TeX tooling tends to be very stable. I haven't tried other engines and I could not tell you anything about how interoperable they are.
 
-I've included a minimalistic build script `./build.sh` as an example, using Latexmk as the build tool. Depending on your compile time (e.g. if you have a lot of large images) you may want to modify this slightly as described in its documentation.
+I've included a minimalistic build script `./build.sh` as an example, using Latexmk as the build tool. Depending on your compile time (e.g. if you have a lot of large images) you may want to modify this slightly as described in its documentation. The included `./.latexmkrc` selects the preferred engine automatically.
 
 ## Data Format
 

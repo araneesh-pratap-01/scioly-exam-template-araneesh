@@ -13,11 +13,28 @@
 
 \RequirePackage[T1]{fontenc} % mlmodern only comes in T1 apparently
 \RequirePackage{mlmodern} % lmodern is unreadable in digital
+
+\RequirePackage{totcount} % forward-looking counter for section handling
+
+% == Section Declaration ==
+% Defined here (rather than down with the other helpers) because the data package calls it,
+% and that has to be loaded before pdfx so the metadata files can use the tournament info.
+% Declares a section counter, registers it for forward-looking totals, and accumulates it
+% into \sumpoints so there's only one place to add a section.
+\newcommand{\sciolysectionsum}{}
+\newcommand{\definesection}[1]{%
+    \newcounter{sec#1}\regtotcounter{sec#1}%
+    \expandafter\gdef\expandafter\sciolysectionsum\expandafter{%
+        \sciolysectionsum + \totvalue{sec#1}}%
+}
+\newcommand{\sumpoints}{\the\numexpr 0\sciolysectionsum\relax} % leading 0 keeps this valid with no sections declared
+
+\RequirePackage{data/scioly-exam-template-araneesh-data} % load common data (tournament info)
+
 \RequirePackage[a-1b]{pdfx} % PDF/A to ensure compatibility
 
 \RequirePackage[letterpaper,lmargin=0.7in,rmargin=0.7in,tmargin=0.5in,bmargin=0.7in,footskip=0.15in]{geometry} % sufficient margins for pretty much any printer or copier
 \RequirePackage{multicol} % setting up two columns
-\RequirePackage{totcount} % forward-looking counter for section handling
 \RequirePackage{gensymb} % if I don't keep this now I'll forget about it when I actually need it
 \RequirePackage{zref-totpages}
 
@@ -28,17 +45,16 @@
 \RequirePackage{readarray} % data ingestion for questions
 \RequirePackage{forloop}
 
-\RequirePackage{data/scioly-exam-template-araneesh-data} % load common data (tournament info)
-
 % == Image Sheet tikz formatting ==
 \newcommand{\formatimgnum}[1]{%
     \contour{black}{\textcolor{white}{\Huge{\textbf{#1}}}}%
 }
+% These deliberately omit the trailing `;' so that usage reads like ordinary tikz, i.e. `\imagenode{...};'
 \newcommand{\imagenode}[1]{%
-    \node[anchor=north west,draw,inner sep=0pt,line width=1pt] at (0,0) {#1};%
+    \node[anchor=north west,draw,inner sep=0pt,line width=1pt] at (0,0) {#1}%
 }
 \newcommand{\labelnode}[3]{%
-    \node[anchor=north west] at (#1,#2) {\formatimgnum{#3}};%
+    \node[anchor=north west] at (#1,#2) {\formatimgnum{#3}}%
 }
 
 % == Helper Commands ==
@@ -53,20 +69,20 @@
 \newcommand{\blankFull}{\blankLength{3.0in}}
 \newcommand{\blankShort}{\blankLength{1in}}
 
-\newcommand{\sectionheaderTestpacket}[3]{
-    \vspace*{#2em}
-    \section*{Section #1 - \total{sec#1} points}
-    \vspace*{#3em}
+\newcommand{\sectionheaderTestpacket}[3]{%
+    \vspace*{#2em}%
+    \section*{Section #1 - \total{sec#1} points}%
+    \vspace*{#3em}%
 }
-\newcommand{\sectionheaderKey}[3]{
-    \vspace*{#2em}
-    \section*{Section #1 \ans{\total{sec#1}}/\total{sec#1} points}
-    \vspace*{#3em}
+\newcommand{\sectionheaderKey}[3]{%
+    \vspace*{#2em}%
+    \section*{Section #1 \ans{\total{sec#1}}/\total{sec#1} points}%
+    \vspace*{#3em}%
 }
-\newcommand{\sectionheaderAnswersheet}[3]{
-    \vspace*{#2em}
-    \section*{Section #1 \rule{0.4in}{0.5pt}/\total{sec#1} points}
-    \vspace*{#3em}
+\newcommand{\sectionheaderAnswersheet}[3]{%
+    \vspace*{#2em}%
+    \section*{Section #1 \rule{0.4in}{0.5pt}/\total{sec#1} points}%
+    \vspace*{#3em}%
 }
 
 % == General Document Formatting ==
