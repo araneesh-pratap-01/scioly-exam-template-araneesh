@@ -1,0 +1,22 @@
+\documentclass{scioly-exam-template-araneesh}
+
+\newcommand{\printdoctype}{Station Questions}
+
+\begin{document}
+
+% == Exam Content ==
+\begin{multicols}{2}
+\begin{enumerate}
+\begin{Large}
+
+% Iterate over data and format entries as appropriate for this doctype
+% Use \pagebreak for every section line's test packet spacer data in exam-context.txt (except the first section) as this will put each section on its own page. Not done here due to wanting to show the format options for TestPacket
+\newcounter{datarow}\forloop{datarow}{1}{\value{datarow} < \numexpr\sciolydataarrayROWS + 1\relax}{\formatDataEntryTestpacket{\thedatarow}}
+
+\vfill\null
+
+\end{Large}
+\end{enumerate}
+\end{multicols}
+
+\end{document}
